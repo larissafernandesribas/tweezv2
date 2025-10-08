@@ -1,0 +1,107 @@
+body {
+background-color: black;
+}
+
+.welcome {
+font-family: retro;
+font-size: 30px;
+color: white;    
+
+position: absolute; 
+top:270px;         
+left: 400px;  
+}
+
+.play {
+font-family: retro; 
+font-size: 20px;
+color: rgb(0, 0, 0);
+text-align: center;
+text-decoration: none;
+
+width: 150px;
+height: 60px;
+margin-top: 5px;
+margin-bottom: 30px;
+border-radius: 10px;
+background-color: white;
+
+
+display: flex;
+justify-content: center; 
+align-items: center; 
+
+
+position: absolute; 
+top:400px;         
+left: 900px;  
+}       
+
+.play:hover{
+    transition:0.5s;
+    transform:scale(1.05);
+    transform: rotate(0.5);
+}
+  
+
+#mascote {
+position: absolute; 
+top: 340px;        
+left: 1100px;  
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* todas as fontes :3 */
+
+@font-face {
+font-family: 'birdy'; 
+src: url('fontes/birdy.ttf') format('truetype'); }
+@font-face {
+font-family: 'digivolve'; 
+src: url('fontes/digivolve.otf') format('truetype'); }
+@font-face {
+font-family: 'pixel'; 
+src: url('fontes/pixel.ttf') format('truetype'); }
+@font-face {
+font-family: 'gameplay'; 
+src: url('fontes/gameplay.ttf') format('truetype'); }
+@font-face {
+font-family: 'retro'; 
+src: url('fontes/retro.ttf') format('truetype'); }
+
+
+
+

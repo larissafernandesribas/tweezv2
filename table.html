@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="jogopag.css"/>
+</head>
+<body>
+
+
+<div class="logo">
+<p>TWEEZ</p>
+<img src="/imagens/mascote.jpg" alt="mascote"> 
+</div>    
+
+<div class="container">
+   
+
+
+<iframe id="jogo" src="https://www.jopi.com/embed.php?game=table-tennis-world-tour" frameborder="0" scrolling="no" width="800" height="600" ></iframe>
+
+<div class="game-buttons">
+   <button id="fullscreenBtn">Tela Cheia</button>
+   <button id="reloadBtn">Reiniciar</button>
+   <button id="favBtn">Favoritar</button>
+</div>
+
+<h1>TENNIS WORLD TOUR</h1>
+<p>tennis world tour é um jogo simulador de ping pong, aonde o jogador pode representar diferentes países e jogar em vários campeonatos.</p>
+</div>
+
+
+<div class="btnvoltar">
+<button><a href="jogos.html">voltar</a></button>
+</div>
+<script>
+    const jogo = document.getElementById("jogo");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+    const reloadBtn = document.getElementById("reloadBtn");
+    const favBtn = document.getElementById("favBtn");
+
+    // Tela cheia
+    fullscreenBtn.addEventListener("click", () => {
+        if (jogo.requestFullscreen) {
+            jogo.requestFullscreen();
+        } else if (jogo.webkitRequestFullscreen) {
+            jogo.webkitRequestFullscreen();
+        } else if (jogo.msRequestFullscreen) {
+            jogo.msRequestFullscreen();
+        }
+    });
+
+    // Reiniciar o jogo (recarregar iframe)
+    reloadBtn.addEventListener("click", () => {
+        jogo.src = jogo.src;
+    });
+
+    // Favoritar (simulação)
+    let favoritado = false;
+    favBtn.addEventListener("click", () => {
+        favoritado = !favoritado;
+        favBtn.textContent = favoritado ? "Favoritado" : "Favoritar";
+    });
+</script>
+
+</body>
+</html>

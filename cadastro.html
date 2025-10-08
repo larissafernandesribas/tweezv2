@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+  <form id="registerForm" method="POST" action="login/cadastro.php">
+  <title>cadastro</title>
+  <link rel="stylesheet" href="cadastro.css"> <!-- pode manter o mesmo CSS -->
+</head>
+<body>
+  <main class="container">
+     <form id="registerForm" method="POST" action="login/cadastro.php"></form>
+      <h1>cadastro</h1>
+
+      <div class="inputbox">
+        <input id="username" name="username" placeholder="usuário" type="text" required>
+      </div>
+
+      <div class="inputbox">
+        <input id="email" name="email" placeholder="email" type="email" required>
+      </div>
+
+      <div class="inputbox">
+        <input id="password" name="password" placeholder="senha" type="password" minlength="6" required />
+        <button type="button" class="toggle-eye" aria-label="Mostrar senha" data-target="password">
+          <span class="material-symbols-outlined">visibility</span>
+        </button>
+      </div>
+
+      <div class="inputbox">
+        <input id="confirmPassword" name="confirmPassword" placeholder="confirmar senha" type="password" minlength="6" required />
+        <button type="button" class="toggle-eye" aria-label="Mostrar confirmar senha" data-target="confirmPassword">
+          <span class="material-symbols-outlined">visibility</span>
+        </button>
+      </div>
+
+      <div id="feedback" class="error" role="alert" style="display:none"></div>
+      <div id="ok" class="success" style="display:none"></div>
+
+      <button type="submit" class="login">cadastrar</button>
+
+      <div class="registro">
+        <p>já tem uma conta? <a href="login.html">entrar</a></p>
+      </div>
+    </form>
+
+    <div class="btnvoltar">
+      <button><a href="inicio.html">voltar</a></button>
+    </div>
+  </main>
+
+  <img src="imagens/mascote.jpg" class="mascote">
+
+  <script>
+    // referencias
+    const form = document.getElementById('registerForm');
+    const pwd = document.getElementById('password');
+    const confirmPwd = document.getElementById('confirmPassword');
+    const feedback = document.getElementById('feedback');
+    const ok = document.getElementById('ok');
+    const toggleButtons = document.querySelectorAll('.toggle-eye');
+
+    // alterna visibilidade da senha e troca o ícone
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        if (!input) return;
+        if (input.type === 'password') {
+          input.type = 'text';
+          btn.querySelector('.material-symbols-outlined').textContent = 'visibility_off';
+          btn.setAttribute('aria-label', 'Ocultar senha');
+        } else {
+          input.type = 'password';
+          btn.querySelector('.material-symbols-outlined').textContent = 'visibility';
+          btn.setAttribute('aria-label', 'Mostrar senha');
+        }
+      });
+    });
+
+    // valida em "tempo real" se as senhas batem
+    function validatePasswords() {
+      feedback.style.display = 'none';
+      ok.style.display = 'none';
+
+      if (pwd.value.length > 0 && confirmPwd.value.length > 0) {
+        if (pwd.value !== confirmPwd.value) {
+          feedback.style.display = 'block';
+          feedback.textContent = 'as senhas não combinam';
+          return false;
+        } else {
+          feedback.style.display = 'none';
+          return true;
+        }
+      }
+      return false;
+    }
+
+    pwd.addEventListener('input', validatePasswords);
+    confirmPwd.addEventListener('input', validatePasswords);
+
+    // submit: valida campos e senhas
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      feedback.style.display = 'none';
+      ok.style.display = 'none';
+
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (!username || !email || !pwd.value || !confirmPwd.value) {
+        feedback.style.display = 'block';
+        feedback.textContent = 'preencha todos os campos';
+        return;
+      }
+
+      if (pwd.value.length < 6) {
+        feedback.style.display = 'block';
+        feedback.textContent = 'a senha precisa ter pelo menos 6 caracteres';
+        return;
+      }
+
+      if (pwd.value !== confirmPwd.value) {
+        feedback.style.display = 'block';
+        feedback.textContent = 'as senhas não combinam';
+        return;
+      }
+
+      // Se tiver backend, envia via fetch para o endpoint real.
+      // Exemplo (troca '/api/cadastrar' pro teu endpoint PHP):
+      /*
+      fetch('/login/cadastro.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password: pwd.value })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          ok.style.display = 'block';
+          ok.textContent = 'Cadastro realizado!';
+          setTimeout(()=> location.href='jogos.html',800);
+        } else {
+          feedback.style.display = 'block';
+          feedback.textContent = data.message || 'Erro ao cadastrar';
+        }
+      })
+      .catch(() => {
+        feedback.style.display = 'block';
+        feedback.textContent = 'Erro de rede';
+      });
+      */
+
+      // Simulação de sucesso (mantive para tests locais)
+      ok.style.display = 'block';
+      ok.textContent = 'Cadastro realizado! Redirecionando...';
+      setTimeout(() => {
+        location.href = 'jogos.html';
+      }, 800);
+    });
+  </script>
+</body>
+</html>

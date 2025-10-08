@@ -1,0 +1,186 @@
+@font-face {
+font-family: 'retro'; 
+src: url('fontes/retro.ttf') format('truetype'); }
+
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;   
+    font-family: retro;
+    color:rgb(0, 0, 0);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+
+.container {
+    width: 420px;
+    background-color:white;
+    border-radius: 10px;
+    color:black;
+    padding: 30px 40px;
+    
+}
+
+.container h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.inputbox {
+    position:relative;
+    width:100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.inputbox input {
+    width:100%;
+    height: 100%;
+    background-color:transparent;
+    outline:none;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size:16px;
+    padding: 20px 45px 20px 20px;
+    
+}
+
+.inputbox input::placeholder {
+    color: rgb(97, 97, 97);
+}
+
+.inputbox i {
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    font-size: 20px;
+}
+
+.lembrarsenha {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: -15px 0 15px;
+
+}
+
+.lembrarsenha label input {
+    margin-right: 5px;
+
+}
+
+.lembrarsenha a {
+    text-decoration: none;
+}
+
+.lembrarsenha a:hover {
+    text-decoration: underline;
+}
+
+    .login {
+    
+    
+    width:50%;
+    height:50px;
+    border-radius: 2px;
+    border: 2px solid;
+    font-size: 20px;
+    display: block;   
+    margin: 0 auto;   
+    background-color: white;
+    cursor:pointer;
+    
+}   
+
+.login:hover {
+background-color: rgb(199, 199, 199);
+border-color: black;
+transform: scale(1.05);     
+transition:0.5s;
+}
+
+a {
+text-decoration: none;    
+}
+
+.semregistro {
+
+font-size: 13px;
+text-align: center;
+color: black;
+}
+
+.semregistro a:hover{
+    text-decoration: underline;
+    color: rgb(255, 0, 149);
+}
+
+.registro {
+    font-size: 13px;
+    text-align: center;
+    margin: 20px 0 15px;
+
+}
+
+.registro a {
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 15px;
+
+}
+
+.registro a:hover {
+    text-decoration: underline;
+}
+
+
+.btnvoltar a {
+    background-color: white;
+    color:black;
+    font-size: 18px;
+    width: 90px;
+    height: 30px;
+    text-align: center; 
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 0%;
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    border-radius: 8px;    
+
+}
+
+
+.mascote {
+    position: absolute;
+    width: 100px;
+    top: 60px;
+    left: 200px;
+}
+
+.toggle-eye{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    background:transparent;
+    border:0;
+    padding:4px;
+    cursor:pointer;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.error{
+    color:#b00020;
+}
+  

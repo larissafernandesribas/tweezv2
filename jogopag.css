@@ -1,0 +1,149 @@
+body {
+    background-color: black;
+}
+
+.logo {
+
+font-family: retro;
+color: white;
+font-size: 20px;
+text-align: center;
+
+}
+
+.logo img {
+
+    height: 40px;
+    position: relative;
+    top: -55px;
+    left: 70px;
+}
+
+
+.container{
+
+    font-family: retro; 
+    color: black;
+    background-color: white;
+    width: 1500px;
+    height: 840px;  
+    padding: 30px 40px;
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    border-radius: 20px;
+    place-items: center;
+    text-align: center;
+    
+
+}
+
+
+
+
+
+
+.container h1:hover {
+text-decoration: underline;
+color: rgb(66, 0, 0);
+}
+
+.container p:hover {
+text-decoration: underline;
+cursor: pointer;
+color: rgb(66, 0, 0);
+}
+
+
+.btnvoltar button {
+    border-radius: 9px;
+    border: none;
+}
+
+.btnvoltar a {
+    
+    color: rgb(0, 0, 0);
+    font-family: retro;
+    font-size: 18px;
+    width: 90px;
+    height: 30px;
+    text-align: center; 
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 0%;
+    border-radius: 8px;   
+
+}
+
+
+
+.game-buttons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+}
+
+
+.game-buttons button {
+    display: flex;
+    align-items: center;     
+    justify-content: center; 
+    width: 120px;            
+    height: 40px;            
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-family: retro;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.game-buttons button:hover {
+    background-color: rgb(66, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* todas as fontes :3 */
+
+@font-face {
+font-family: 'birdy'; 
+src: url('fontes/birdy.ttf') format('truetype'); }
+@font-face {
+font-family: 'digivolve'; 
+src: url('fontes/digivolve.otf') format('truetype'); }
+@font-face {
+font-family: 'pixel'; 
+src: url('fontes/pixel.ttf') format('truetype'); }
+@font-face {
+font-family: 'gameplay'; 
+src: url('fontes/gameplay.ttf') format('truetype'); }
+@font-face {
+font-family: 'retro'; 
+src: url('fontes/retro.ttf') format('truetype'); }
+
+
+
+
